@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/sprint-context.xsd">
+	<!-- This is Collection dependency injection-->
+
+	<bean name="student1" class="com.tutorial.collections.Student">
+		<property name="name">
+			<value>Ashish Sharma</value>
+		</property>
+		<property name="phones">
+			<list>
+				<value>9619174094</value>
+				<value>9873640012</value>
+			</list>
+		</property>
+		<property name="addresses">
+			<set>
+				<value>Bangalore</value>
+				<value>Jaipur</value>
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+			<entry key="java" value="8Years"/>
+			<entry key="unix" value="6 months"/>
+			<entry key="apigee" value="6years"/>
+			</map>
+		</property>
+	</bean>
+</beans>

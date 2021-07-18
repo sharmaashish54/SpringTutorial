@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/sprint-context.xsd">
+
+
+	<bean name="BeanExampleLifecycleClass1"
+		class="com.spring.lifecycle.BeanExampleLifecycleClass"
+		init-method="init" destroy-method="destroy">
+		<property name="price">
+			<value>212</value>
+		</property>
+	</bean>
+
+	<bean name="INterfaceLifecycleExample1"
+		class="com.spring.lifecycle.INterfaceLifecycleExample">
+		<property name="price">
+			<value>2134342</value>
+		</property>
+	</bean>
+
+	<bean name="lifecycleAnnotationsExamplePojo1"
+		class="com.spring.lifecycle.lifecycleAnnotationsExamplePojo">
+		<property name="example">
+			<value>Ashish</value>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+</beans>

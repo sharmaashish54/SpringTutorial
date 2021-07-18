@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- This is setter dependency -->
+	
+	<context:annotation-config />
+
+	<bean name="address1" class="com.spring.auto.wire.annotation.Address">
+		<property name="street" value="vaishali nagar" />
+		<property name="city" value="Jaipur" />
+	</bean>
+	
+	<bean name="address2" class="com.spring.auto.wire.annotation.Address">
+		<property name="street" value="ranisati nagar" />
+		<property name="city" value="Jaipur-1" />
+	</bean>
+
+	<!-- <property name="Addres" ref="Address1"/> --> <!-- manual reference -->
+	<!-- <bean name="Employee1" class="com.spring.auto.wire.Employee" autowire="byName"> --> <!-- autowiring by name , it will match the name of dependency in Employee 
+		class which is address in config.xml and inject the dependency -->
+	<!-- <bean name="Employee1" class="com.spring.auto.wire.Employee" autowire="byType"> --> <!-- It matches the type of object to be injected, here name can be anything, 
+		issue can occur if there are two beans with different names but samse class 
+		type. -->
+
+	<bean name="Employee1" class="com.spring.auto.wire.annotation.Employee">
+
+	</bean>
+</beans>

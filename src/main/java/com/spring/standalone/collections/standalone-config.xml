@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/sprint-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+ <!-- This is setter dependency -->
+ 
+ <util:list list-class="java.util.LinkedList" id ="freindList">
+ <value>Ashish</value>
+ <value>ayush</value>
+ <value>Shefali</value>
+ <value>mysha</value>
+ </util:list>
+ 
+ 
+ 
+ <util:map map-class="java.util.HashMap" id="feeMap">
+ <entry key="Spring" value= "20000"/>
+ <entry key="hibernate" value= "2000"/>
+ <entry key="struts" value= "200"/>
+ </util:map>
+ 
+ <util:properties id="properties">
+ <prop key="driver">jdbc</prop>
+ <prop key="url">https://abc.com</prop>
+ <prop key="db">mongo</prop>
+ </util:properties>
+ 
+	<bean name="person" class="com.spring.standalone.collections.Person">
+		<property name="friends" ref="freindList"/>
+		<property name="feeStructure" ref="feeMap"/>
+		<property name="properties" ref="properties"/>
+		
+	</bean>
+</beans>
